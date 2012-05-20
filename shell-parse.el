@@ -32,10 +32,6 @@
 
 ;; functions
 
-(defun shell-parse-clear ()
- (message "cleared")
- (setq shell-parse-list '()))
-
 (defun shell-parse-query ()
  (interactive)
  (if (thing-at-point 'word)
@@ -52,7 +48,7 @@
  (end-of-thing 'word)
  (let ((s (thing-at-point 'word)))
   (when s
-   (let* ((q (shell-parse-preprocess 
+   (let ((q (shell-parse-preprocess 
 	      (shell-parse-request 
 	       s))))
     (when q

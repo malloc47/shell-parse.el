@@ -91,7 +91,7 @@
 	     (length shell-parse-word))))
   (let ((s (thing-at-point 'word)))
    (when s
-    (let* ((q (shell-parse-preprocess 
+    (let ((q (shell-parse-preprocess 
 	       (shell-parse-request 
 		s))))
      (when q
